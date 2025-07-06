@@ -35,7 +35,7 @@ def create_table(connection):
     cursor = connection.cursor()
     cursor.execute("""
         CREATE TABLE IF NOT EXISTS user_data (
-            user_id VARCHAR(36) PRIMARY KEY,
+            user_id VARCHAR(10) PRIMARY KEY,
             name VARCHAR(100) NOT NULL,
             email VARCHAR(100) NOT NULL,
             age DECIMAL NOT NULL,
