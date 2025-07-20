@@ -27,7 +27,8 @@ class TestAccessNestedMap(unittest.TestCase):
         """Test that KeyError is raised for invalid paths in access_nested_map"""
         with self.assertRaises(KeyError) as context:
             access_nested_map(nested_map, path)
-        self.assertEqual(str(context.exception), repr(path[len(nested_map):][0]))
+        expected_msg = repr(path[len(nested_map):][0])
+        self.assertEqual(str(context.exception), expected_msg)
 
 
 class TestGetJson(unittest.TestCase):
